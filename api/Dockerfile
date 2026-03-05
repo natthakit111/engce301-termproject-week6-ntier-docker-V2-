@@ -20,7 +20,7 @@ COPY package*.json ./
 
 # Install dependencies
 # --omit=dev = ไม่ install devDependencies ใน production
-RUN npm ci --omit=dev
+RUN apk add --no-cache wget && npm ci --omit=dev
 
 # Copy source code
 COPY . .
